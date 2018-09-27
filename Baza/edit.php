@@ -6,6 +6,7 @@ if($_GET['Id']) {
 $Id = $_GET['Id'];
 
 $sql = "SELECT
+            Id,
             Name,
             Year,
             Nrpages,
@@ -21,6 +22,10 @@ $data = $result->fetch_assoc();
 
 $connect->close();
 
+
+
+
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -32,6 +37,8 @@ $connect->close();
     <title>Document</title>
 </head>
 <body>
+
+<!-- При нажатии на сабмит, произойдет вызов update.php-->
 
 <form action="update.php" method="post">
     <table cellspacing="0" cellpadding="0">
@@ -48,7 +55,7 @@ $connect->close();
             <td><input type="text" name="Nrpages" placeholder="Nrpages" value="<? echo $data['Nrpages'] ?>" /></td>
         </tr>
         <tr>
-            <input type="hidden" name="Id" value="<? echo $data['Id']?>" />
+            <input type="hidden" name="Id" value=" <? echo $data['Id'] ?> " />
             <td><button type="submit">Save Changes</button></td>
             <td><a href="index.php"><button type="button">Back</button></a></td>
         </tr>

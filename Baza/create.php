@@ -42,7 +42,7 @@ $authors = mysqli_query($connect, 'SELECT Author, Idauthor FROM authors')
 
         </tr>
         <tr>
-            <td><button type="submit">Save Changes</button></td>
+            <td><button type="submit">Add Book</button></td>
             <td><a href="index.php"><button type="button">Back</button></a></td>
         </tr>
     </table>

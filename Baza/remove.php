@@ -15,17 +15,16 @@ require_once 'connect.php';
     <title>Document</title>
 </head>
 <body>
-hello
+
 <?
 
-if($_POST) {
-    $Id = $_POST['Id'];
-    echo ($_POST['Id']);
+    $Id = $_GET['Id'];
+
     $sql = "DELETE
             FROM listofbooks
             WHERE Id = {$Id}";
     if($connect->query($sql) === TRUE) {
-        echo "<p>New Record Successfully Created</p>";
+        echo "<p>Record Successfully Deleted</p>";
         echo "<a href='create.php'><button type='button'>Back</button></a>";
         echo "<a href='index.php'><button type='button'>Home</button></a>";
     } else {
@@ -33,8 +32,6 @@ if($_POST) {
     }
 
     $connect->close();
-}
-
 
 ?>
 </body>
