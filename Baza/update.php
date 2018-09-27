@@ -11,7 +11,6 @@ if($_POST) {
 
     if($connect->query($sql) === TRUE) {
         echo "<p>Succcessfully Updated</p>";
-        echo $_POST['Id'];
         echo "<a href='edit.php?Id=".$Id."'><button type='button'>Back</button></a>";
         echo "<a href='index.php'><button type='button'>Home</button></a>";
     } else {
